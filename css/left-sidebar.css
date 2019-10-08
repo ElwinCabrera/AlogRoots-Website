@@ -1,0 +1,188 @@
+/* 
+
+Copyright (c) 2019 - Elwin Cabrera - https://codepen.io/davigsouza81/pen/VrYJEX 
+
+Permission is hereby granted, free of charge, to any person 
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, 
+merge, publish, distribute, sublicense, and/or sell copies of 
+the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall 
+be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE. */
+
+.sidebar .sidebar-link,
+.sidebar .sidebar-link:hover,
+.sidebar .sidebar-link:focus {
+    color: #1d2129;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.sidebar {
+    color: #1d2129;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    display: none;
+}
+
+.sidebar .sidebar-header {
+    display: none;
+}
+
+.sidebar ul li .sidebar-link {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    border-left: 3px solid #e9ebee;
+}
+
+.sidebar ul li .sidebar-link:hover {
+    border-left: 3px solid #009688;
+    color: #1d2129;
+    background: #fff;
+}
+
+.sidebar ul li.active>.sidebar-link {
+    border-left: 3px solid #009688;
+    color: #1d2129;
+    background-color: #fff;
+}
+
+.sidebar ul li .active>.sidebar-link {
+    color: #009688;
+}
+
+.sidebar i[data-toggle="collapse"] {
+    position: relative;
+}
+
+
+/* .sidebar i[aria-expanded="false"]::before,
+.sidebar i[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    content: '\e260';
+} */
+
+ul ul .sidebar-link {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+}
+
+
+/*Botao menu sidebar*/
+
+#sidebarCollapse {
+    display: none;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media ( max-width: 768px) {
+    .sidebar a {
+        color: #fff;
+    }
+    .sidebar ul li.active>.sidebar-link,
+    a[aria-expanded="true"] {
+        color: #1d2129 !important;
+        background-color: #fff;
+    }
+    .sidebar {
+        margin-left: -250px;
+        width: 250px;
+        color: #fff;
+        background: #009688;
+        overflow-y: scroll;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100vh;
+        z-index: 999;
+    }
+    .sidebar.active {
+        margin-left: 0;
+        left: 0;
+    }
+    .sidebar .sidebar-header {
+        display: block;
+        padding: 20px;
+    }
+    .sidebar ul li .sidebar-link,
+    .sidebar ul li .sidebar-link:hover,
+    .sidebar ul li.active>.sidebar-link,
+    a[aria-expanded="true"] {
+        border-left: none;
+    }
+    /*Botao menu sidebar*/
+    #sidebarCollapse {
+        display: inline-block;
+        width: 44px;
+        height: 34px;
+        padding: 9px 10px;
+        background: #f5f5f5;
+        margin-left: 15px;
+    }
+    #sidebarCollapse span {
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        margin: 0 auto;
+        display: block;
+        background: #1d2129;
+        transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+        transition-delay: 0.2s;
+    }
+    #sidebarCollapse span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+    #sidebarCollapse.active span {
+        transform: none;
+        opacity: 1;
+    }
+    #sidebarCollapse.active .icon-bar+.icon-bar {
+        margin-top: 4px;
+    }
+}
+
+
+/*retirar*/

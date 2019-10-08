@@ -18,20 +18,32 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
 
+    <!-- Bootstrap Glyphicon, Made by Jan Kovařík -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
 
     <!-- Custom CSS Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/left-sidebar.css">
 
-    <!--Font Awsome JavaScript-->
-    <script src="https://kit.fontawesome.com/69d34591d2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+
+
+
+
+
 
 
     <title>Algo Roots | Home</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#sidebar">
+
 
     <header>
         <nav class="navbar navbar-expand-md navbar-dark stylish-color-dark">
@@ -44,14 +56,14 @@
 
                 </div>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-contents" aria-controls="main-nav-contents" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="main-nav-contents">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Learn</a>
+                        <li class="nav-item active">
+                            <a class="nav-link " href="#">Learn</a>
                         </li>
 
                         <li class="nav-item">
@@ -72,339 +84,251 @@
 
 
 
-    <section class="container mt-3">
-
+    <!-- Start Main Page Content -->
+    <section class="container mt-0 mt-md-5">
+        <!-- Start Main Page Row -->
         <div class="row">
 
-            <div class="col-md-2 container">
-                <nav class="nav sticky-top" aria-orientation="vertical">
+            <!-- Start Left Side Nav  
+            This Section of code is licenced under the MIT LICENCE -->
+            <div class="overlay"></div>
+            <div class="col-3">
+                <nav id="sidebar" class="sidebar sticky-top">
+                    <div class="sidebar-header">
+                        <h3>Select a Category</h3>
+                    </div>
 
-                    <ul class="navbar-nav">
-                        <li>
-                            <a class="nav-link" href="#">Data Structures</a>
-                            <ul class="navbar-nav">
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                            </ul>
-                        </li>
+                    <!-- Start Side Nav Contents -->
+                    <ul class="list-unstyled comonents">
+                        <!-- <p>Categories</p> -->
 
-                        <li>
-                            <a class="nav-link" href="#">Algorithms</a>
-                            <ul class="navbar-nav">
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
-                                <li><a class="nav-link" href="#">Test</a></li>
+                        <!-- Start Side(left) Nav Element -->
+                        <li class="active">
+                            <div class="d-flex">
+
+                                <a href="#data-structures-sec" class="sidebar-link flex-grow-1">Data Structures</a>
+                                <i class="fas fa-angle-down d-flex align-items-center justify-content-center" href="#data-structures-submenu" data-toggle="collapse" aria-expanded="false"></i>
+
+                            </div>
+
+                            <!-- Start Side(left) Nav Element Submenu -->
+                            <ul class="collapse list-unstyled" id="data-structures-submenu">
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="active"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
                             </ul>
+                            <!-- Start Side(left) Nav Element Submenu -->
                         </li>
+                        <!-- End Side(left) Nav Element  -->
+
+                        <!-- Start Side(left) Nav Element -->
+                        <li class="">
+                            <div class="d-flex">
+                                <div class="flex-grow-1"><a href="#algorithms-sec" class="sidebar-link">Algorithms</a></div>
+
+                                <div class="d-flex align-items-center justify-content-center"><a href="#"><i class="fas fa-angle-down " href="#algorithms-submenu" data-toggle="collapse" aria-expanded="false"></i></a></div>
+                            </div>
+                            <!-- Start Side(left) Nav Element Submenu -->
+                            <ul class="collapse list-unstyled" id="algorithms-submenu">
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                            </ul>
+                            <!-- Start Side(left) Nav Element Submenu -->
+                        </li>
+                        <!-- End Side(left) Nav Element  -->
+
+                        <!-- Start Side(left) Nav Element -->
+                        <li class="">
+                            <div class="d-flex">
+                                <div class="flex-grow-1"><a href="#ssubmenu" class="sidebar-link">Test</a></div>
+
+                            </div>
+
+                        </li>
+                        <!-- End Side(left) Nav Element  -->
+
 
                     </ul>
+                    <!-- End Side(left) Nav Contents -->
                 </nav>
 
+            </div>
+            <!-- End Left Side Nav  and MIT LICENCED CODE-->
+
+
+
+
+
+
+            <!-- Category Selection -->
+            <div class="col-9 mb">
+
+                <!-- Start Section -->
+                <section class="ds-sec">
+
+
+                    <!-- Start Section Text-->
+                    <div class="container mb-1">
+                        <h3 class="font-weight-bold" id="data-structures-sec">Data Structures</h3>
+                        <hr class="clearfix">
+                    </div>
+                    <!-- End Section Text-->
+
+                    <!-- Start Row of 3 Cards -->
+                    <div class="row container my-3">
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+
+
+
+                    </div>
+                    <!-- End Row of 3 Cards -->
+
+                </section>
+                <!-- End Section -->
+
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+
+                <!-- Start Section -->
+                <section class="algo-sec">
+
+
+                    <!-- Start Section Text-->
+                    <div class="container mb-1">
+                        <h3 class="font-weight-bold" id="algorithms-sec">Algorithms</h3>
+                        <hr class="clearfix">
+                    </div>
+                    <!-- End Section Text-->
+
+                    <!-- Start Row of 3 Cards -->
+                    <div class="row container my-3">
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+
+
+
+                    </div>
+                    <!-- End Row of 3 Cards -->
+
+                </section>
+                <!-- End Section -->
+
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
 
             </div>
+            <!-- End Category Selection -->
 
-
-            <div class="col-md-9 container">
-                <div class="container text-center">
-                    <h2>Learn</h2>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="test.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <p class="card-text">Card Text</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-
-
-            </div>
-
-            <div class="col-md-1 container">
-
-            </div>
 
         </div>
+        <!-- End Main Page Row -->
+
+
+
     </section>
+    <!-- End Main Page Content -->
 
 
     <footer class="page-footer font-small pt-4 stylish-color-dark">
@@ -462,6 +386,15 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+
+    <!-- Nice scroll -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+
+    <!--Font Awsome JavaScript-->
+    <script src="https://kit.fontawesome.com/69d34591d2.js" crossorigin="anonymous"></script>
+
+    <script src="js/left-side-bar.js"></script>
+
 </body>
 
 </html>
