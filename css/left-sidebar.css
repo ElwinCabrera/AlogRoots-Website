@@ -1,6 +1,6 @@
 /* 
 
-Copyright (c) 2019 - Elwin Cabrera - https://codepen.io/davigsouza81/pen/VrYJEX 
+Copyright (c) 2019 - Elwin Cabrera - Original: https://codepen.io/davigsouza81/pen/VrYJEX 
 
 Permission is hereby granted, free of charge, to any person 
 obtaining a copy of this software and associated documentation 
@@ -37,6 +37,7 @@ DEALINGS IN THE SOFTWARE. */
 
 .sidebar {
     color: #1d2129;
+    top: 2.625em;
 }
 
 .overlay {
@@ -46,6 +47,10 @@ DEALINGS IN THE SOFTWARE. */
     background: rgba(0, 0, 0, 0.7);
     z-index: 998;
     display: none;
+}
+
+.sidebar-link:hover {
+    cursor: pointer;
 }
 
 .sidebar .sidebar-header {
@@ -65,7 +70,8 @@ DEALINGS IN THE SOFTWARE. */
     background: #fff;
 }
 
-.sidebar ul li.active>.sidebar-link {
+.sidebar ul li.active>.sidebar-link,
+.sidebar ul li.active>div+a {
     border-left: 3px solid #009688;
     color: #1d2129;
     background-color: #fff;
@@ -111,8 +117,10 @@ ul ul .sidebar-link {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
+
+/*
 @media ( max-width: 768px) {
-    .sidebar a {
+     .sidebar a {
         color: #fff;
     }
     .sidebar ul li.active>.sidebar-link,
@@ -147,7 +155,7 @@ ul ul .sidebar-link {
     a[aria-expanded="true"] {
         border-left: none;
     }
-    /*Botao menu sidebar*/
+    
     #sidebarCollapse {
         display: inline-block;
         width: 44px;
@@ -181,8 +189,8 @@ ul ul .sidebar-link {
     }
     #sidebarCollapse.active .icon-bar+.icon-bar {
         margin-top: 4px;
-    }
-}
+    } 
+}*/
 
 
 /*retirar*/

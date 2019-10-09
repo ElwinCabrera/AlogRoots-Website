@@ -1,4 +1,4 @@
-/*Copyright (c) 2019 - Elwin Cabrera - https://codepen.io/davigsouza81/pen/VrYJEX 
+/*Copyright (c) 2019 - Elwin Cabrera - Original: https://codepen.io/davigsouza81/pen/VrYJEX 
 
 Permission is hereby granted, free of charge, to any person 
 obtaining a copy of this software and associated documentation 
@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE. */
 
 $(document).ready(function() {
-    $("#sidebar").niceScroll({
+    $(".sidebar").niceScroll({
         cursorcolor: '#53619d',
         cursorwidth: 4,
         cursorborder: 'none'
@@ -29,14 +29,14 @@ $(document).ready(function() {
 
     $('.overlay').on('click', function() {
         $('#sidebarCollapse').addClass('active');
-        $('#sidebar').removeClass('active');
+        $('.sidebar').removeClass('active');
         $('.overlay').fadeOut();
     });
 
     $('#sidebarCollapse').on('click', function() {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
-            $('#sidebar').addClass('active');
+            $('.sidebar').addClass('active');
             $('.overlay').fadeIn();
             $('.collapse.in').toggleClass('in');
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');

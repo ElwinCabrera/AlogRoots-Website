@@ -42,7 +42,7 @@
     <title>Algo Roots | Home</title>
 </head>
 
-<body data-spy="scroll" data-target="#sidebar">
+<body data-spy="scroll" data-target="#l-sidebar">
 
 
     <header>
@@ -92,56 +92,56 @@
             <!-- Start Left Side Nav  
             This Section of code is licenced under the MIT LICENCE -->
             <div class="overlay"></div>
-            <div class="col-3">
-                <nav id="sidebar" class="sidebar sticky-top">
+            <div class="col-3 ">
+                <nav id="l-sidebar" class="sidebar sticky-top">
                     <div class="sidebar-header">
                         <h3>Select a Category</h3>
                     </div>
 
                     <!-- Start Side Nav Contents -->
-                    <ul class="list-unstyled comonents">
+                    <ul class="list-unstyled menu">
                         <!-- <p>Categories</p> -->
 
                         <!-- Start Side(left) Nav Element -->
-                        <li class="active">
-                            <div class="d-flex">
+                        <li class="active menu-item">
+                            <div class="d-flex sidebar-link" href="#data-structures-submenu" data-toggle="collapse" aria-expanded="false">
 
-                                <a href="#data-structures-sec" class="sidebar-link flex-grow-1">Data Structures</a>
-                                <i class="fas fa-angle-down d-flex align-items-center justify-content-center" href="#data-structures-submenu" data-toggle="collapse" aria-expanded="false"></i>
-
+                                <a href="#data-structures-sec" class=" flex-grow-1 text-muted">Data Structures</a>
+                                <i class="fas fa-angle-down text-muted d-flex align-items-center justify-content-center"></i>
                             </div>
 
                             <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="collapse list-unstyled" id="data-structures-submenu">
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="active"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                            <ul class="list-unstyled menu collapse" id="data-structures-submenu">
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="menu-item active"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
                             </ul>
                             <!-- Start Side(left) Nav Element Submenu -->
                         </li>
                         <!-- End Side(left) Nav Element  -->
 
                         <!-- Start Side(left) Nav Element -->
-                        <li class="">
-                            <div class="d-flex">
-                                <div class="flex-grow-1"><a href="#algorithms-sec" class="sidebar-link">Algorithms</a></div>
+                        <li class="menu-item">
+                            <div class="d-flex sidebar-link" href="#algorithms-submenu" data-toggle="collapse" aria-expanded="false">
 
-                                <div class="d-flex align-items-center justify-content-center"><a href="#"><i class="fas fa-angle-down " href="#algorithms-submenu" data-toggle="collapse" aria-expanded="false"></i></a></div>
+                                <a href="#algorithms-sec" class="flex-grow-1 text-muted">Algorithms</a>
+                                <i class="fas fa-angle-down text-muted d-flex align-items-center justify-content-center"></i>
+
                             </div>
                             <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="collapse list-unstyled" id="algorithms-submenu">
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
-                                <li class=""><a href="#" class="sidebar-link">Test</a></li>
+                            <ul class="collapse list-unstyled menu" id="algorithms-submenu">
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
+                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
                             </ul>
                             <!-- Start Side(left) Nav Element Submenu -->
                         </li>
                         <!-- End Side(left) Nav Element  -->
 
                         <!-- Start Side(left) Nav Element -->
-                        <li class="">
+                        <li class="menu-item">
                             <div class="d-flex">
                                 <div class="flex-grow-1"><a href="#ssubmenu" class="sidebar-link">Test</a></div>
 
@@ -164,7 +164,9 @@
 
 
             <!-- Category Selection -->
-            <div class="col-9 mb">
+            <div class="col-9 mb-3">
+
+
 
                 <!-- Start Section -->
                 <section class="ds-sec">
@@ -173,8 +175,9 @@
                     <!-- Start Section Text-->
                     <div class="container mb-1">
                         <h3 class="font-weight-bold" id="data-structures-sec">Data Structures</h3>
-                        <hr class="clearfix">
+
                     </div>
+                    <hr class="clearfix">
                     <!-- End Section Text-->
 
                     <!-- Start Row of 3 Cards -->
@@ -249,8 +252,9 @@
                     <!-- Start Section Text-->
                     <div class="container mb-1">
                         <h3 class="font-weight-bold" id="algorithms-sec">Algorithms</h3>
-                        <hr class="clearfix">
+
                     </div>
+                    <hr class="clearfix">
                     <!-- End Section Text-->
 
                     <!-- Start Row of 3 Cards -->
@@ -394,6 +398,8 @@
     <script src="https://kit.fontawesome.com/69d34591d2.js" crossorigin="anonymous"></script>
 
     <script src="js/left-side-bar.js"></script>
+
+    <script src="js/main.js"></script>
 
 </body>
 
