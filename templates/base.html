@@ -1,8 +1,10 @@
 <!--
     Author: Elwin Cabrera
-    Licenced by the 
--->
+    Licenced under the Mozilla Public License 2.0 - https://www.mozilla.org/en-US/MPL/2.0/
 
+    Please consider sharing any cool additons to this project! :)
+-->
+{% load static %}
 <!doctype html>
 
 <html lang="en">
@@ -27,8 +29,16 @@
     <!--Font Awsome JavaScript-->
     <script src="https://kit.fontawesome.com/69d34591d2.js" crossorigin="anonymous"></script>
 
+    <!-- Custom CSS Styles -->
+    <link rel="stylesheet" href="../static/css/left-sidebar.css">
 
+    <link rel="stylesheet" href="../static/css/style.css">
+
+
+    {% block head %}
     <title>Algo Roots | Home</title>
+    {% endblock head %}
+    
 </head>
 
 <body>
@@ -70,46 +80,7 @@
 
     </header>
 
-    <section class="container">
-        <div class="jumbotron text-center">
-            <h1 class="display-4">Learn, Practice, and Ace It</h1>
-            <p class="lead">Learn and practice data structures and algorithms in order to prepare for an exam or a technical interview. We cover the fundamentals of computer science and advanced topics with new content added all the time.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
-
-            <hr class="my-4">
-            <p>Mobile and desktop app comming soon!</p>
-            <div class="pt-2">
-                <a class="btn btn-primary btn-lg btn-outline-primary waves-effect disabled" href="#" role="button" tabindex="-1" aria-disabled="true">Download our Android App</a>
-                <a class="btn btn-primary btn-lg btn-outline-primary waves-effect disabled" href="#" role="button" tabindex="-1" aria-disabled="true">Download our Desktop App</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Learn</h5>
-                        <p class="card-text">Explore computer science fundamentals as well as advanced topics.</p>
-                        <a class="btn btn-primary" href="#">Data Structures</a>
-                        <a class="btn btn-primary" href="#">Algorithms</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Practice</h5>
-                        <p class="card-text">Ready to take your newly learned skills to the test. Find exersise for any topic of your choice. We have the best excercieses that will help you with an interview or an exam.</p>
-                        <a class="btn btn-primary" href="#">Data Structures</a>
-                        <a class="btn btn-primary" href="#">Algorithms</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% block main_content %} {% endblock main_content%}
 
 
 
@@ -157,7 +128,7 @@
 
 
 
-    <!-- JQuery 3.3.1-->
+      <!-- JQuery 3.3.1-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <!-- Bootstrap tooltips -->
@@ -168,6 +139,17 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+
+    <!-- Nice scroll -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+
+    <!--Font Awsome JavaScript-->
+    <script src="https://kit.fontawesome.com/69d34591d2.js" crossorigin="anonymous"></script>
+
+    <script src="../static/js/left-side-bar.js"></script>
+
+    <script src="../static/js/main.js"></script>
+
 </body>
 
 </html>
