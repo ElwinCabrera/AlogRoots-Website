@@ -126,3 +126,8 @@ dmypy.json
 
 # Other stuff
 .vscode/*
+
+# Test files and other things
+vsc-no-track*
+vsc-no-track/
+vsc-no-track.*
