@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block head %}
     <title> Algo Roots | Learn - Categories</title>
@@ -8,125 +8,14 @@
 {% block main_content %}
 
 
-
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark stylish-color-dark">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        <!--<img src="">-->
-                        Algo Roots
-                    </a>
-
-                </div>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-contents" aria-controls="main-nav-contents" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="main-nav-contents">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link " href="#">Learn</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Practice</a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">More</a></li>
-                        <!--<li class="nav-item"><a class="nav-link" href="#">About</a></li>-->
-                    </ul>
-                </div>
-            </div>
-
-        </nav>
-
-    </header>
-
-
-
     <!-- Start Main Page Content -->
     <section class="container mt-0 mt-md-5">
         <!-- Start Main Page Row -->
         <div class="row">
 
-            <!-- Start Left Side Nav  
-            This Section of code is licenced under the MIT LICENCE -->
             <div class="col-md-3 ">
-                <nav id="l-sidebar" class="sidebar sticky-top">
-                    <div class="sidebar-header">
-                        <h3>Select a Category</h3>
-                    </div>
-
-                    <!-- Start Side Nav Contents -->
-                    <ul class="list-unstyled menu">
-                        <!-- <p>Categories</p> -->
-                        <div class="container text-center">
-                            <h4 class="text-muted">Learn Topic</h4>
-                        </div>
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="active menu-item">
-                            <div class="d-flex sidebar-link" href="#data-structures-submenu" data-toggle="collapse" aria-expanded="false">
-
-                                <a href="#data-structures-sec" class=" flex-grow-1 text-muted">Data Structures</a>
-                                <i class="fas fa-angle-down text-muted d-flex align-items-center justify-content-center"></i>
-                            </div>
-
-                            <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="list-unstyled menu collapse" id="data-structures-submenu">
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item active"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                            </ul>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="menu-item">
-                            <div class="d-flex sidebar-link" href="#algorithms-submenu" data-toggle="collapse" aria-expanded="false">
-
-                                <a href="#algorithms-sec" class="flex-grow-1 text-muted">Algorithms</a>
-                                <i class="fas fa-angle-down text-muted d-flex align-items-center justify-content-center"></i>
-
-                            </div>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="collapse list-unstyled menu" id="algorithms-submenu">
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                            </ul>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="menu-item">
-                            <div class="d-flex">
-                                <div class="flex-grow-1"><a href="#ssubmenu" class="sidebar-link">Test</a></div>
-
-                            </div>
-
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-
-                    </ul>
-                    <!-- End Side(left) Nav Contents -->
-                </nav>
-
+                {% include "left-sidenav.html" with collapsed="True"%}
             </div>
-            <!-- End Left Side Nav and MIT LICENCED CODE-->
-
-
-
-
 
 
             <!-- Category Selection -->
@@ -153,7 +42,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="card">
                                 <a class="streched-link" href="#"></a>
-                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"> Topic </h5>
                                     <!-- <p class="card-text">Extra Text</p> -->
@@ -166,7 +55,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="card">
                                 <a class="streched-link" href="#"></a>
-                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"> Topic </h5>
                                     <!-- <p class="card-text">Extra Text</p> -->
@@ -179,7 +68,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="card">
                                 <a class="streched-link" href="#"></a>
-                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"> Topic </h5>
                                     <!-- <p class="card-text">Extra Text</p> -->
@@ -230,7 +119,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="card">
                                 <a class="streched-link" href="#"></a>
-                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <img src="{% static "vsc-no-track/example.png" %}"  class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"> Topic </h5>
                                     <!-- <p class="card-text">Extra Text</p> -->
@@ -243,7 +132,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="card">
                                 <a class="streched-link" href="#"></a>
-                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"> Topic </h5>
                                     <!-- <p class="card-text">Extra Text</p> -->
@@ -256,7 +145,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="card">
                                 <a class="streched-link" href="#"></a>
-                                <img src="example.png" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
                                     <h5 class="card-title"> Topic </h5>
                                     <!-- <p class="card-text">Extra Text</p> -->

@@ -2,7 +2,7 @@ $(document).ready(documentReady);
 
 
 function documentReady(jQuery) {
-
+    console.log("main.js ready!");
     $(".sidebar>ul>li div[data-toggle='collapse']").click(onSidebarClickEvent);
 
     $('[data-spy="scroll"]').on('activate.bs.scrollspy', function() {

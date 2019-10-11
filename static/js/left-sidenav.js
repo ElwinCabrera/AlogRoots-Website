@@ -21,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE. */
 
 $(document).ready(function() {
+    console.log("left-sidebar.js ready!");
     $(".sidebar").niceScroll({
         cursorcolor: '#53619d',
         cursorwidth: 4,
