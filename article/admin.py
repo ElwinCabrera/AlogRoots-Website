@@ -6,4 +6,6 @@ from .models import *
 admin.site.register(Topic)
 admin.site.register(Section)
 admin.site.register(SubSection)
+admin.site.register(GoodFor)
+admin.site.register(NotGoodFor)
 
