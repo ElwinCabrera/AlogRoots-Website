@@ -35,7 +35,7 @@ class Section(models.Model):
     topic = models.ForeignKey(Topic,  on_delete=models.CASCADE, related_name="section")
 
     def __str__(self):
-        return "id: "self.sectionId+ "-"self.title +"({0})".format(Topic.title)
+        return "id: "+self.sectionId+ "-"+self.title +"({0})".format(Topic.title)
     
 
 
@@ -46,7 +46,7 @@ class SubSection(models.Model):
     section = models.ForeignKey(Section,  on_delete=models.CASCADE, related_name="subSec", )
 
     def __str__(self):
-        return "id: "self.subSectionID+ "-"self.title +"({0})".format(Section.title)
+        return "id: "+self.subSectionID+ "-"+self.title +"({0})".format(Section.title)
 
 
 class GoodFor(models.Model):
@@ -56,7 +56,7 @@ class GoodFor(models.Model):
     item4 = models.CharField(max_length=120, blank=True, default=" ");
     item5 = models.CharField(max_length=120, blank=True, default=" ");
 
-    topic = models.ForeignKey(Topic,  on_delete=models.CASCADE, related_name="good-for")
+    topic = models.ForeignKey(Topic,  on_delete=models.CASCADE, related_name="goodFor")
 
 class NotGoodFor(models.Model):
     item1 = models.CharField(max_length=120, blank=True, default=" ");
@@ -65,5 +65,5 @@ class NotGoodFor(models.Model):
     item4 = models.CharField(max_length=120, blank=True, default=" ");
     item5 = models.CharField(max_length=120, blank=True, default=" ");
 
-    topic = models.ForeignKey(Topic,  on_delete=models.CASCADE, related_name="not-good-for")
+    topic = models.ForeignKey(Topic,  on_delete=models.CASCADE, related_name="notGoodFor")
     
