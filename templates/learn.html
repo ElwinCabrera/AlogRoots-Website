@@ -2,250 +2,183 @@
 {% load static %}
 
 {% block head %}
-    <title> Algo Roots | Learn</title>
+    <title> Algo Roots | Learn - Categories</title>
 {% endblock head %}
 
 {% block main_content %}
 
 
-
     <!-- Start Main Page Content -->
-    <section class=" container mt-0 mt-md-5">
+    <section class="container mt-0 mt-md-5">
         <!-- Start Main Page Row -->
         <div class="row">
 
-            <!-- Start Left Side Nav  
-            This Section of code is licenced under the MIT LICENCE -->
-            <div class="col-md-2 ">
-                <nav id="l-sidebar" class="sidebar">
-
-                    <!-- Start Side Nav Contents -->
-                    <ul class="list-unstyled menu">
-                        <div class="container text-center">
-                            <h4 class="text-muted">Learn Topic</h4>
-                        </div>
-                        <!-- <p>Categories</p> -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="active menu-item">
-                            <div class="d-flex sidebar-link" href="#data-structures-submenu" data-toggle="collapse" aria-expanded="true">
-
-                                <a href="#" class=" flex-grow-1 text-muted">Data Structures</a>
-                                <i class="fas fa-angle-up text-muted d-flex align-items-center justify-content-center"></i>
-                            </div>
-
-                            <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="list-unstyled menu collapsed show" id="data-structures-submenu">
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item active"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                            </ul>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="menu-item">
-                            <div class="d-flex sidebar-link" href="#algorithms-submenu" data-toggle="collapse" aria-expanded="true">
-
-                                <a href="#" class="flex-grow-1 text-muted">Algorithms</a>
-                                <i class="fas fa-angle-down text-muted d-flex align-items-center justify-content-center"></i>
-
-                            </div>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="list-unstyled menu collapsed show" id="algorithms-submenu">
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                            </ul>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="menu-item">
-                            <div class="d-flex sidebar-link text-muted" href="#ssubmenu">
-                                <a href="" class="flex-grow-1 text-muted">Test</a>
-
-                            </div>
-
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-
-                    </ul>
-                    <!-- End Side(left) Nav Contents -->
-                </nav>
-
+            <div class="col-md-3 ">
+                {% include "left-sidenav.html" with collapsed="True"%}
             </div>
-            <!-- End Left Side Nav  and MIT LICENCED CODE-->
 
+
+            <!-- Category Selection -->
             <div class="col-md-9 mb-3">
-                <div class="container article-main">
-                    <figure class="embed-responsive embed-responsive-16by9 article-fig-main">
-                        <img class="card-img-top m-0 p-0 embed-responsive-item rounded" src="{% static "vsc-no-track/example.png" %}"  alt="">
-                    </figure>
 
-                    <div class="mb-5 article-title">
-                        <h1>Category Name</h1>
+
+
+                <!-- Start Section -->
+                <section class="ds-sec">
+
+
+                    <!-- Start Section Text-->
+                    <div class="container mb-1">
+                        <h3 class="font-weight-bold" id="data-structures-sec">Data Structures</h3>
+
                     </div>
+                    <hr class="clearfix">
+                    <!-- End Section Text-->
 
-                    <div class="article-sec">
-                        <h2>Reference</h2>
-                        <div class="row d-flex ">
+                    <!-- Start Row of 3 Cards -->
+                    <div class="row container my-3">
 
-
-
-                            <div class="col-md-7 pr-0">
-
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus
-                                    vitae cupiditate aliquam!!!!!!!!
-                                </p>
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
                             </div>
-                            <div class="col-md-5 d-flex align-self-start">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th class="col-md-2"></th>
-                                            <th class="col-md-2">Time</th>
-                                            <th class="col-md-1">Space</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th class="col-md-2">Worst Case</th>
-                                            <td class="col-md-2">O(?)</td>
-                                            <td class="col-md-1">O(?)</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Average Case</th>
-                                            <td class="col-md-2">O(?)</td>
-                                            <td class="col-md-1">O(?)</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-2">Best Case</th>
-                                            <td class="col-md-2">O(?)</td>
-                                            <td class="col-md-1">O(?)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
                             </div>
-
-
-
                         </div>
+                        <!-- End Card Col-->
 
-                        <div>
-                            <h4>Good for:</h4>
-                            <ul>
-                                <li>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo hic architecto. Eveniet neque at sequi quibusdam! Omnis voluptatum et officia ex, quaerat similique hic cupiditate porro, id, quibusdam
-                                        voluptas!
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>Someting else ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ab aliquam sit facere nulla vel maiores recusandae minus a beatae, reprehenderit pariatur minima et, debitis aliquid vero exercitationem.
-                                        Accusantium, dolorem.</p>
-                                </li>
-                                <li>
-                                    <p>More things</p>
-                                </li>
-                            </ul>
-                            <h4>Not Good for:</h4>
-                            <ul>
-                                <li>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit explicabo hic architecto. Eveniet neque at sequi quibusdam! Omnis voluptatum et officia ex, quaerat similique hic cupiditate porro, id, quibusdam
-                                        voluptas!
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>Someting else ...</p>
-                                </li>
-                                <li>
-                                    <p>More things</p>
-                                </li>
-                            </ul>
-                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus
-                                    vitae cupiditate aliquam!
-                                </p> -->
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
                         </div>
+                        <!-- End Card Col-->
+
+
+
+
+                    </div>
+                    <!-- End Row of 3 Cards -->
+
+                </section>
+                <!-- End Section -->
+
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+
+                <!-- Start Section -->
+                <section class="algo-sec">
+
+
+                    <!-- Start Section Text-->
+                    <div class="container mb-1">
+                        <h3 class="font-weight-bold" id="algorithms-sec">Algorithms</h3>
 
                     </div>
                     <hr class="clearfix">
+                    <!-- End Section Text-->
+
+                    <!-- Start Row of 3 Cards -->
+                    <div class="row container my-3">
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="{% static "vsc-no-track/example.png" %}"  class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
+
+                        <!-- Start Card Col-->
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card">
+                                <a class="streched-link" href="#"></a>
+                                <img src="{% static "vsc-no-track/example.png" %}" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"> Topic </h5>
+                                    <!-- <p class="card-text">Extra Text</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Card Col-->
 
 
-                    <div class="mb-0 article-sec">
-                        <h2>What is a {Insert category here}</h2>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae
-                            cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos
-                            doloremque, id commodi voluptates?
-                        </p>
+
                     </div>
-                    <hr class="clearfix">
+                    <!-- End Row of 3 Cards -->
 
-                    <div class="mb-0 article-sec">
-                        <h2>Usage Cases</h2>
+                </section>
+                <!-- End Section -->
 
-                        <p>
-                            Write about the motivation behind this category or something interesting to get it or maybe what its used for in real life <br><br>started Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio
-                            expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-                            assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos doloremque, id commodi voluptates?
-                        </p>
-                    </div>
-                    <hr class="clearfix">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
+                <hr class="my-5">
 
-                    <div class="mb-0 article-sec">
-                        <h2>Properties </h2>
-
-
-                        <h3>Insertion</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae
-                            cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos
-                            doloremque, id commodi voluptates?
-                        </p>
-
-                        <h3>Deletion</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae
-                            cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos
-                            doloremque, id commodi voluptates?
-                        </p>
-
-                        <h3>Searching</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae
-                            cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos
-                            doloremque, id commodi voluptates?
-                        </p>
-                    </div>
-                    <hr class="clearfix">
-                    <div class="mb-0 article-sec">
-                        <h2>Runtime and Space Complexity </h2>
-
-
-                        <h3>Insertion</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae
-                            cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos
-                            doloremque, id commodi voluptates?
-                        </p>
-                    </div>
-                    <hr class="clearfix">
-
-                    <div class="mb-0 article-sec">
-                        <h2>Resources and Citations</h2>
-
-
-                        <h3>Insertion</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus vitae
-                            cupiditate aliquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda ratione beatae quibusdam, dolores placeat itaque cupiditate qui repellendus quidem aperiam illum eligendi magnam officia eos
-                            doloremque, id commodi voluptates?
-                        </p>
-                    </div>
-
-
-                </div>
             </div>
+            <!-- End Category Selection -->
 
 
         </div>
@@ -255,5 +188,4 @@
 
     </section>
     <!-- End Main Page Content -->
-
 {% endblock main_content %}

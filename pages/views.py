@@ -5,9 +5,9 @@ from django.shortcuts import render
 def home_veiw(request):
     return render(request, 'home.html',{})
 
-def learn_categories_veiw(request):
-    return render(request, 'learn-categories.html',{})
-
 def learn_veiw(request):
     return render(request, 'learn.html',{})
+
+def learn_topic_veiw(request):
+    return render(request, 'learn-topic.html',{})
 
