@@ -9,8 +9,18 @@ def home_veiw(request):
 def learn_veiw(request):
     categories = Learn_Categories.objects.all()
     categoryItems = Learn_Category_Item.objects.all()
+    i  = 1
+    # categoryGroups = []
+    # for categoryItem in categoryItems:
+    #     group = []
+    #     if(i % 3 == 0):
+    #         categoryGroups += group
+    #         group = []
+    #     else:
+    #         group += categoryItem
+    #     i+=1
 
-    context = { 'categories':categories, 'categoryItems':categoryItems }
+    context = { 'categories':categories, 'categoryItems':categoryItems, }
     return render(request, 'learn.html',context)
 
 def practice_veiw(request):

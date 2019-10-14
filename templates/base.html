@@ -47,7 +47,7 @@
         <nav class="navbar navbar-expand-md navbar-dark stylish-color-dark">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{% url "home_view" %}">
                         <!--<img src="">-->
                         Algo Roots
                     </a>
@@ -61,11 +61,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Learn</a>
+                            <a class="nav-link " href="{% url "learn_view" %}">Learn</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Practice</a>
+                            <a class="nav-link" href="{% url "practice_view" %}">Practice</a>
                         </li>
                     </ul>
 
