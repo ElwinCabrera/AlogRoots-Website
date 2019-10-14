@@ -14,73 +14,7 @@
         <!-- Start Main Page Row -->
         <div class="row">
 
-            <!-- Start Left Side Nav  
-            This Section of code is licenced under the MIT LICENCE -->
-            <div class="col-md-2 ">
-                <nav id="l-sidebar" class="sidebar">
-
-                    <!-- Start Side Nav Contents -->
-                    <ul class="list-unstyled menu">
-                        <div class="container text-center">
-                            <h4 class="text-muted">Learn Topic</h4>
-                        </div>
-                        <!-- <p>Categories</p> -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="active menu-item">
-                            <div class="d-flex sidebar-link" href="#data-structures-submenu" data-toggle="collapse" aria-expanded="true">
-
-                                <a href="#" class=" flex-grow-1 text-muted">Data Structures</a>
-                                <i class="fas fa-angle-up text-muted d-flex align-items-center justify-content-center"></i>
-                            </div>
-
-                            <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="list-unstyled menu collapsed show" id="data-structures-submenu">
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item active"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                            </ul>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="menu-item">
-                            <div class="d-flex sidebar-link" href="#algorithms-submenu" data-toggle="collapse" aria-expanded="true">
-
-                                <a href="#" class="flex-grow-1 text-muted">Algorithms</a>
-                                <i class="fas fa-angle-down text-muted d-flex align-items-center justify-content-center"></i>
-
-                            </div>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                            <ul class="list-unstyled menu collapsed show" id="algorithms-submenu">
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                                <li class="menu-item"><a href="#" class="sidebar-link">Test</a></li>
-                            </ul>
-                            <!-- Start Side(left) Nav Element Submenu -->
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-                        <!-- Start Side(left) Nav Element -->
-                        <li class="menu-item">
-                            <div class="d-flex sidebar-link text-muted" href="#ssubmenu">
-                                <a href="" class="flex-grow-1 text-muted">Test</a>
-
-                            </div>
-
-                        </li>
-                        <!-- End Side(left) Nav Element  -->
-
-
-                    </ul>
-                    <!-- End Side(left) Nav Contents -->
-                </nav>
-
-            </div>
-            <!-- End Left Side Nav  and MIT LICENCED CODE-->
+            
 
             <div class="col-md-9 mb-3">
                 <div class="container article-main">
@@ -173,12 +107,15 @@
                         {% endif %}
 
 
+                        {% if section.has_subsections %}
+                        
                         {% for subsection in sub_sections %}
                         
                         <h3>{{ subsection.title}}</h3>
                         <p>{{subsection.subsec_text}}</p>
 
                         {% endfor %}
+                        {% endif %}
                     </div>
 
                     <hr class="clearfix">
@@ -190,6 +127,17 @@
 
 
                 </div>
+            </div>
+
+            <div class="col-md-3">
+            <ul>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+            </ul>
             </div>
 
 

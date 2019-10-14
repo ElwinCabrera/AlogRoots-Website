@@ -1,29 +1,17 @@
 from django.db import models
-#from django.db.models.ForeignKey
+from pages.models import Learn_Categories
 
 # Create your models here.
 
 
 class Article(models.Model):
-    DATA_STRUCTURES = "DS"
-    ALGORITHMS = "ALGOS"
-    ADV_DATA_STRUCTURES = "DS_ADV"
-    ADV_ALGORITHMS = "ALGOS_ADV"
-    OTHER = "OTHER"
-    UNDEFINED = "UNDEFINED"
-
-    CATEGORY_CHOICES = [(UNDEFINED,"--NO CATEGORY--"),
-                        (DATA_STRUCTURES, "Data Structres"), 
-                        (ALGORITHMS, "Algorithms"), 
-                        (ADV_ALGORITHMS,"Advanced Algorithms"), 
-                        (ADV_DATA_STRUCTURES, "Advanced Data Structures"), 
-                        (OTHER, "Other")]
+  
 
     id = models.AutoField(primary_key=True)
 
     post_date = models.DateTimeField(auto_now=True, auto_now_add=False)
     
-    category = models.CharField(max_length=10, choices=CATEGORY_CHOICES)
+    category = models.CharField(max_length=10, choices=Learn_Categories.CATEGORY_CHOICES)
     title = models.CharField(max_length=120);
     images_path = models.FilePathField(path="static/images/article{0}".format(title), blank=True ,recursive=True, max_length=100)
     
@@ -66,20 +54,20 @@ class SubSection(models.Model):
 
 
 class GoodFor(models.Model):
-    item1 = models.CharField(max_length=120, blank=True, default=" ");
-    item2 = models.CharField(max_length=120, blank=True, default=" ");
-    item3 = models.CharField(max_length=120, blank=True, default=" ");
-    item4 = models.CharField(max_length=120, blank=True, default=" ");
-    item5 = models.CharField(max_length=120, blank=True, default=" ");
+    item1 = models.CharField(max_length=120, blank=True);
+    item2 = models.CharField(max_length=120, blank=True);
+    item3 = models.CharField(max_length=120, blank=True);
+    item4 = models.CharField(max_length=120, blank=True);
+    item5 = models.CharField(max_length=120, blank=True);
 
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="goodFor")
 
 class NotGoodFor(models.Model):
-    item1 = models.CharField(max_length=120, blank=True, default=" ");
-    item2 = models.CharField(max_length=120, blank=True, default=" ");
-    item3 = models.CharField(max_length=120, blank=True, default=" ");
-    item4 = models.CharField(max_length=120, blank=True, default=" ");
-    item5 = models.CharField(max_length=120, blank=True, default=" ");
+    item1 = models.CharField(max_length=120, blank=True);
+    item2 = models.CharField(max_length=120, blank=True);
+    item3 = models.CharField(max_length=120, blank=True);
+    item4 = models.CharField(max_length=120, blank=True);
+    item5 = models.CharField(max_length=120, blank=True);
 
     article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="notGoodFor")
     
