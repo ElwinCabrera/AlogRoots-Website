@@ -121,9 +121,20 @@
                     <hr class="clearfix">
                     {% endfor %}
 
+                    {% if resources %}
                     <div class="mb-0 article-sec">
                         <h2>Resources and Citations</h2>
+
+                        <ul>
+                            {% for resource in resources %}
+                            <li>
+                                <p><a href="{{ resource.url }}">{{ resource.source_name }}</a></p>
+                            </li>
+                            {% endfor %}
+                        </ul>
                     </div>
+
+                    {% endif %}
 
 
                 </div>
