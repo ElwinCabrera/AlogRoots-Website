@@ -5,30 +5,28 @@ from pages.models import Learn_Categories
 
 
 class Article(models.Model):
+    LEARN_ARTICLE = "LEARN_A"
+    PRACTICE_ARTICLE = "PRACTICE_A"
+    OTHER_ARTICLE = "OTHER_A"
   
+    ARTICLE_CHOICES = [#(UNDEFINED,"--NO CATEGORY--"),
+                        (LEARN_ARTICLE, "Learn Article"), 
+                        (PRACTICE_ARTICLE, "Practice Article"), 
+                        (OTHER_ARTICLE,"Other"), ]
 
     id = models.AutoField(primary_key=True)
 
     post_date = models.DateTimeField(auto_now=True, auto_now_add=False)
     
-    category = models.CharField(max_length=10, choices=Learn_Categories.CATEGORY_CHOICES)
+    article_type = models.CharField(max_length=20, choices=ARTICLE_CHOICES)
+    category = models.CharField(max_length=20, choices=Learn_Categories.CATEGORY_CHOICES)
     title = models.CharField(max_length=120);
     images_path = models.FilePathField(path="static/images/article{0}".format(title), blank=True ,recursive=True, max_length=100)
     
     description = models.TextField(blank=True)
 
-    time_worst = models.CharField(max_length=4, blank=True)
-    time_average = models.CharField(max_length=4,blank=True)
-    time_best = models.CharField(max_length=4,blank=True)
-
-    space_worst = models.CharField(max_length=4,blank=True)
-    space_average = models.CharField(max_length=4,blank=True)
-    space_best = models.CharField(max_length=4,blank=True)
-
-    
-
     def __str__(self):
-        return str(self.id) + " - " + self.title + " (Category: {0})".format(self.category) 
+        return str(self.id) + " - " + self.title + " ({0} Category: {1})".format(self.article_type,self.category) 
     
 
 class Section(models.Model):    
@@ -53,21 +51,42 @@ class SubSection(models.Model):
         return str(self.id)+ " - "+self.title +" (In article:{0}[{1}], section: {2}[{3}])".format(self.article.title, self.article.id ,self.section.title,self.section.id)
 
 
-class GoodFor(models.Model):
-    item1 = models.CharField(max_length=120, blank=True);
-    item2 = models.CharField(max_length=120, blank=True);
-    item3 = models.CharField(max_length=120, blank=True);
-    item4 = models.CharField(max_length=120, blank=True);
-    item5 = models.CharField(max_length=120, blank=True);
-
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="goodFor")
-
-class NotGoodFor(models.Model):
-    item1 = models.CharField(max_length=120, blank=True);
-    item2 = models.CharField(max_length=120, blank=True);
-    item3 = models.CharField(max_length=120, blank=True);
-    item4 = models.CharField(max_length=120, blank=True);
-    item5 = models.CharField(max_length=120, blank=True);
-
-    article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="notGoodFor")
+class Strengths(models.Model):
+    desc = models.CharField(max_length=120, blank=True);
     
+
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="Strengths")
+
+    def __str__(self):
+        return str(self.id)+ " - Strengths  (In article: {0}[{1}])".format(self.article.title, self.article.id)
+
+class Weaknesses(models.Model):
+    desc = models.CharField(max_length=120, blank=True);
+
+    article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="Weaknesses")
+
+    def __str__(self):
+        return str(self.id)+ " - Weaknesses (In article: {0}[{1}])".format(self.article.title, self.article.id)
+
+class Complexity(models.Model):
+    insert_best = models.CharField(max_length=4, default ="N/A", blank=True);
+    insert_avg = models.CharField(max_length=4, default ="N/A", blank=True);
+    insert_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    
+    delete_best = models.CharField(max_length=4, default ="N/A", blank=True);
+    delete_avg = models.CharField(max_length=4, default ="N/A", blank=True);
+    delete_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    
+    search_best = models.CharField(max_length=4, default ="N/A", blank=True);
+    search_avg = models.CharField(max_length=4, default ="N/A", blank=True);
+    search_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    
+    space_best = models.CharField(max_length=4, default ="N/A", blank=True);
+    space_avg = models.CharField(max_length=4, default ="N/A", blank=True);
+    space_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+
+    article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="complexity")
+
+    def __str__(self):
+        return str(self.id)+ " - Complexity (In article: {0}[{1}])".format(self.article.title, self.article.id)
+

@@ -29,40 +29,42 @@
 
                     <div class="article-sec">
                         <h2>Reference</h2>
-                        <div class="row d-flex ">
+                        
 
-
-
-                            <div class="col-md-7 pr-0">
-
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus
-                                    vitae cupiditate aliquam!!!!!!!!
-                                </p>
-                            </div>
-                            <div class="col-md-5 d-flex align-self-start">
+                            <div class="my-3 d-flex align-items-center justify-content-center">
                                 <table>
                                     <thead>
                                         <tr>
                                             <th class="col-md-2"></th>
-                                            <th class="col-md-2">Time</th>
-                                            <th class="col-md-1">Space</th>
+                                            <th class="col-md-2">Best</th>
+                                            <th class="col-md-2">Average</th>
+                                            <th class="col-md-2">Worst</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th class="col-md-2">Worst Case</th>
-                                            <td class="col-md-2">{{ article.time_worst }}</td>
-                                            <td class="col-md-1">{{ article.space_worst }}</td>
+                                            <th class="col-md-2">Insert</th>
+                                            <td class="col-md-2">{{ complexity.insert_best }}</td>
+                                            <td class="col-md-2">{{ complexity.insert_avg }}</td>
+                                            <td class="col-md-2">{{ complexity.insert_worst }}</td>
                                         </tr>
                                         <tr>
-                                            <th class="col-md-2">Average Case</th>
-                                            <td class="col-md-2">{{ article.time_average }}</td>
-                                            <td class="col-md-1">{{ article.space_average }}</td>
+                                            <th class="col-md-2">Search</th>
+                                            <td class="col-md-2">{{ complexity.search_best }}</td>
+                                            <td class="col-md-2">{{ complexity.search_avg }}</td>
+                                            <td class="col-md-2">{{ complexity.search_worst }}</td>
                                         </tr>
                                         <tr>
-                                            <th class="col-md-2">Best Case</th>
-                                            <td class="col-md-2">{{ article.time_best }}</td>
-                                            <td class="col-md-1">{{ article.space_best }}</td>
+                                            <th class="col-md-2">Delete</th>
+                                            <td class="col-md-2">{{ complexity.delete_best }}</td>
+                                            <td class="col-md-2">{{ complexity.delete_avg }}</td>
+                                            <td class="col-md-2">{{ complexity.delete_worst }}</td>
+                                        </tr>
+                                         <tr>
+                                            <th class="col-md-2">Space</th>
+                                            <td class="col-md-2">{{ complexity.space_best }}</td>
+                                            <td class="col-md-2">{{ complexity.space_avg }}</td>
+                                            <td class="col-md-2">{{ complexity.space_worst }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -70,27 +72,25 @@
 
 
 
-                        </div>
+                        
 
                         <div>
-                            <h4>Good for:</h4>
+                            <h4>Strengths:</h4>
                             <ul>
                                 
-                                {% for listItem in goodFor %}
-                                    <li><p>{{ listItem }}</p></li>
+                                {% for listItem in strengths %}
+                                    <li><p>{{ listItem.desc }}</p></li>
                                 {% endfor %}
                                     
                                 
                             </ul>
-                            <h4>Not Good for:</h4>
+                            <h4>Weaknesses:</h4>
                             <ul>
-                               {% for listItem in notGoodFor %}
-                                    <li><p>{{ listItem }}</p></li>
+                               {% for listItem in weaknesses %}
+                                    <li><p>{{ listItem.desc }}</p></li>
                                 {% endfor %}
                             </ul>
-                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta voluptates distinctio expedita! Dolor praesentium illo quidem minus ratione perspiciatis deserunt sapiente, repellat nobis, id consequuntur temporibus
-                                    vitae cupiditate aliquam!
-                                </p> -->
+                
                         </div>
 
                     </div>

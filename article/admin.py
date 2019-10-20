@@ -6,6 +6,8 @@ from .models import *
 admin.site.register(Article)
 admin.site.register(Section)
 admin.site.register(SubSection)
-admin.site.register(GoodFor)
-admin.site.register(NotGoodFor)
+admin.site.register(Strengths)
+admin.site.register(Weaknesses)
+admin.site.register(Complexity)
+
 

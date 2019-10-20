@@ -6,6 +6,6 @@ urlpatterns = [
     path('learn/', learn_veiw,name="learn_view"),
     path('practice/', practice_veiw, name="practice_view"),
     path('about/', learn_veiw, name="about_view"),
-    path('learn/topic/', include('article.urls')),
+    path('article/', include('article.urls')),
     
 ]

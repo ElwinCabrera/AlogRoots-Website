@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <title> Algo Roots | Practice </title>
+{% endblock head %}
+
+{% block main_content %}
+
+
+
+    <!-- Start Main Page Content -->
+    <section class=" container mt-0 mt-md-5">
+        <!-- Start Main Page Row -->
+        <div class="row">
+
+            
+
+            <div class="col-md-9 mb-3">
+                <div class="container article-main">
+                
+                    <div class="mb-5 article-title">
+                        <h1>{{ article.title }}</h1>
+
+                        <p>{{ article.description|safe }}</p>
+                    </div>
+                    
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn btn-primary" href="#solutions" data-toggle="collapse" aria-expanded="false">Show Solutions</button>
+                    </div>
+                    <hr class="clearfix">
+                    
+
+                    
+                    
+                    <div class="collapse" id="solutions">
+                    {% for section in sections %}
+                    <div class="mb-0 article-sec">
+                        <h2>{{ section.title }}</h2>
+
+                        {% if section.sec_text != section.sec_text.empty%}
+                            <p>{{ section.sec_text}}</p>
+
+                            
+                        {% endif %}
+
+
+                        {% if section.has_subsections %}
+                        
+                        {% for subsection in sub_sections %}
+                        
+                        <h3>{{ subsection.title}}</h3>
+                        <p>{{subsection.subsec_text}}</p>
+
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <hr class="clearfix">
+                    {% endfor %}
+                    </div>
+
+                    <div class="mb-0 article-sec">
+                        <h2>Resources and Citations</h2>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-3">
+            <ul>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+                <li>item</li>
+            </ul>
+            </div>
+
+
+        </div>
+        <!-- End Main Page Row -->
+
+
+
+    </section>
+    <!-- End Main Page Content -->
+
+{% endblock main_content %}
