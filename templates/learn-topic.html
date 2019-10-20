@@ -75,22 +75,24 @@
                         
 
                         <div>
+                            {% if strengths %}
                             <h4>Strengths:</h4>
                             <ul>
-                                
                                 {% for listItem in strengths %}
                                     <li><p>{{ listItem.desc }}</p></li>
                                 {% endfor %}
-                                    
-                                
                             </ul>
+                            {% endif %}
+
+                            {% if weaknesses %}
                             <h4>Weaknesses:</h4>
                             <ul>
                                {% for listItem in weaknesses %}
                                     <li><p>{{ listItem.desc }}</p></li>
                                 {% endfor %}
                             </ul>
-                
+                            {% endif %}
+
                         </div>
 
                     </div>
