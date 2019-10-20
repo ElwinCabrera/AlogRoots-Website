@@ -41,7 +41,7 @@
                         {% if section.sec_text != section.sec_text.empty%}
                             <p>{{ section.sec_text}}</p>
 
-                            
+                            {% if section.gistUrl != section.gist_url.empty %} {{section.gist_url|safe}} {% endif %}
                         {% endif %}
 
 

@@ -20,7 +20,7 @@ def practice_veiw(request):
     categoryItems = Practice_Category_Item.objects.all()
     categoryGroups = groupItems(categoryItems)
 
-    context = { 'categories':categories, 'categoryItems':categoryItems }
+    context = { 'categories':categories, 'categoryItems':categoryItems, "categoryGroups":categoryGroups }
     return render(request, 'practice.html',context)
 
 

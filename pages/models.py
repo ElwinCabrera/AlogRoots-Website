@@ -60,6 +60,6 @@ class Practice_Category_Item(models.Model):
     category = models.ForeignKey(Practice_Categories, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.id)+ " - Learn Category Item - "+self.itemNam
+        return str(self.id)+ " - Learn Category Item - "+self.itemName
 
 

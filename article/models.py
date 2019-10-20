@@ -33,6 +33,7 @@ class Section(models.Model):
     title = models.CharField(max_length=120,  blank=True);
     sec_text = models.TextField(blank=True)
     has_subsections = models.BooleanField(default=False)
+    gist_url = models.CharField(max_length=250, blank=True)
 
     article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="section")
 
@@ -69,24 +70,33 @@ class Weaknesses(models.Model):
         return str(self.id)+ " - Weaknesses (In article: {0}[{1}])".format(self.article.title, self.article.id)
 
 class Complexity(models.Model):
-    insert_best = models.CharField(max_length=4, default ="N/A", blank=True);
-    insert_avg = models.CharField(max_length=4, default ="N/A", blank=True);
-    insert_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    insert_best = models.CharField(max_length=20, default ="N/A", blank=True);
+    insert_avg = models.CharField(max_length=20, default ="N/A", blank=True);
+    insert_worst = models.CharField(max_length=20, default ="N/A", blank=True);
     
-    delete_best = models.CharField(max_length=4, default ="N/A", blank=True);
-    delete_avg = models.CharField(max_length=4, default ="N/A", blank=True);
-    delete_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    delete_best = models.CharField(max_length=20, default ="N/A", blank=True);
+    delete_avg = models.CharField(max_length=20, default ="N/A", blank=True);
+    delete_worst = models.CharField(max_length=20, default ="N/A", blank=True);
     
-    search_best = models.CharField(max_length=4, default ="N/A", blank=True);
-    search_avg = models.CharField(max_length=4, default ="N/A", blank=True);
-    search_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    search_best = models.CharField(max_length=20, default ="N/A", blank=True);
+    search_avg = models.CharField(max_length=20, default ="N/A", blank=True);
+    search_worst = models.CharField(max_length=20, default ="N/A", blank=True);
     
-    space_best = models.CharField(max_length=4, default ="N/A", blank=True);
-    space_avg = models.CharField(max_length=4, default ="N/A", blank=True);
-    space_worst = models.CharField(max_length=4, default ="N/A", blank=True);
+    space_best = models.CharField(max_length=20, default ="N/A", blank=True);
+    space_avg = models.CharField(max_length=20, default ="N/A", blank=True);
+    space_worst = models.CharField(max_length=20, default ="N/A", blank=True);
 
     article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="complexity")
 
     def __str__(self):
         return str(self.id)+ " - Complexity (In article: {0}[{1}])".format(self.article.title, self.article.id)
 
+
+class ResourcesCitations(models.Model):
+    source_name = models.CharField(max_length=120, blank=False)
+    url = models.CharField(max_length=20, blank=False);
+
+    article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="resources_citations")
+
+    def __str__(self):
+        return str(self.id)+ " - Resources {0} (For article: {1}[{2}])".format(self.source_name, self.article.title, self.article.id)

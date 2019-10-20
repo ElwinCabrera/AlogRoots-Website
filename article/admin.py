@@ -9,5 +9,6 @@ admin.site.register(SubSection)
 admin.site.register(Strengths)
 admin.site.register(Weaknesses)
 admin.site.register(Complexity)
+admin.site.register(ResourcesCitations)
 
 
