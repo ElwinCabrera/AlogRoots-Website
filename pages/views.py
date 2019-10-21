@@ -18,10 +18,13 @@ def learn_veiw(request):
 def practice_veiw(request):
     categories = Practice_Categories.objects.all()
     categoryItems = Practice_Category_Item.objects.all()
-    categoryGroups = groupItems(categoryItems)
+    categoryGroups = groupItems2(categoryItems)
 
     context = { 'categories':categories, 'categoryItems':categoryItems, "categoryGroups":categoryGroups }
     return render(request, 'practice.html',context)
+
+def about_view(request):
+    return render(request, 'base.html', {})
 
 
 
@@ -50,6 +53,23 @@ def groupItems(categoryItems):
         categoryGroups.append(group)
     
     return categoryGroups
+
+def groupItems2(categoryItems):
+    m = {}
+    group = []
+    for item in categoryItems:
+        key = item.category.type;
+        if(key in m):
+            m[key].append(item);
+        else:
+            m[key] = [item];
+    
+    for key in m:
+        group.append(m[key]);
+    
+    return group;
+
+
     
 def printList(list):
     for item in list:
