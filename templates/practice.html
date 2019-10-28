@@ -14,7 +14,7 @@
         <div class="row">
 
             <div class="col-md-3 ">
-                {% include "left-sidenav.html" with sideNavTitle="Practice Category"  sticky_top="sticky-top" categories=categories categoryItem=categoryItem%}
+                {% include "left-sidenav.html" with sideNavTitle="Practice Category" sticky_top="sticky-top" categories=categories categoryItem=categoryItem%}
             </div>
 
 
@@ -46,7 +46,7 @@
                         {% for group in categoryGroup %}    
                         {% if group.category.name == category.name %}
                     
-                        <a href="#"><li class="list-group-item">{{ group.itemName }}</li></a>
+                        <a href="{% url 'practice_article_view' %} article_id=group.article.id" class="text-decoration"><li class="list-group-item">{{ group.itemName }}</li></a>
                         
                         {% endif %}
                         {% endfor %}

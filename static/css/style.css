@@ -16,11 +16,18 @@ body {
 
 .sidebar {
     overflow-y: scroll;
-    max-height: calc(100vh - 9rem);
+    max-height: calc(125vh - 9rem);
+}
+
+.text-decoration,
+.text-decoration:hover {
+    text-decoration: none !important;
+    color: inherit;
 }
 
 
-/* h1 {
+/* 
+h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
@@ -28,4 +35,5 @@ body {
 
 p {
     font-family: monospace, Arial, Helvetica, sans-serif;
-} */
+} 
+*/

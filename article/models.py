@@ -1,10 +1,8 @@
 from django.db import models
-from pages.models import Learn_Categories
 
 # Create your models here.
+class Choices():
 
-
-class Article(models.Model):
     LEARN_ARTICLE = "LEARN_A"
     PRACTICE_ARTICLE = "PRACTICE_A"
     OTHER_ARTICLE = "OTHER_A"
@@ -14,12 +12,32 @@ class Article(models.Model):
                         (PRACTICE_ARTICLE, "Practice Article"), 
                         (OTHER_ARTICLE,"Other"), ]
 
+    DATA_STRUCTURES = "DS"
+    ALGORITHMS = "ALGOS"
+    ADV_DATA_STRUCTURES = "DS_ADV"
+    ADV_ALGORITHMS = "ALGOS_ADV"
+    OTHER = "OTHER"
+    NONE = "NONE"
+    # UNDEFINED = "UNDEFINED"
+
+    CATEGORY_CHOICES = [#(UNDEFINED,"--NO CATEGORY--"),
+                        (DATA_STRUCTURES, "Data Structres"), 
+                        (ALGORITHMS, "Algorithms"), 
+                        (ADV_ALGORITHMS,"Advanced Algorithms"), 
+                        (ADV_DATA_STRUCTURES, "Advanced Data Structures"), 
+                        (OTHER, "Other"),
+                        (NONE, "NONE"),]
+    
+
+class Article(models.Model):
+    
+
     id = models.AutoField(primary_key=True)
 
     post_date = models.DateTimeField(auto_now=True, auto_now_add=False)
     
-    article_type = models.CharField(max_length=20, choices=ARTICLE_CHOICES)
-    category = models.CharField(max_length=20, choices=Learn_Categories.CATEGORY_CHOICES)
+    article_type = models.CharField(max_length=20, choices=Choices.ARTICLE_CHOICES)
+    category = models.CharField(max_length=20, choices=Choices.CATEGORY_CHOICES)
     title = models.CharField(max_length=120);
     images_path = models.FilePathField(path="static/images/article{0}".format(title), blank=True ,recursive=True, max_length=100)
     
@@ -100,3 +118,43 @@ class ResourcesCitations(models.Model):
 
     def __str__(self):
         return str(self.id)+ " - Resources {0} (For article: {1}[{2}])".format(self.source_name, self.article.title, self.article.id)
+
+
+
+
+
+
+class LearnCategories(models.Model):
+    
+
+    name = models.CharField(max_length=120)
+    type = models.CharField(max_length=120, choices=Choices.CATEGORY_CHOICES)
+
+    def __str__(self):
+        return str(self.id)+ " - Learn Categories - "+self.name + ", "+ self.type
+
+class PracticeCategories(models.Model):
+
+    name = models.CharField(max_length=120)
+    type = models.CharField(max_length=120, choices=Choices.CATEGORY_CHOICES)
+
+    def __str__(self):
+        return str(self.id)+ " - Practice Categories - "+self.name + ", "+ self.type
+
+
+class LearnCategoryItem(models.Model):
+    itemName = models.CharField(max_length=150)
+    category = models.ForeignKey(LearnCategories, on_delete=models.CASCADE)
+
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id)+ " - Learn Category Item - "+self.itemName 
+
+class PracticeCategoryItem(models.Model):
+    itemName = models.CharField(max_length=150)
+    category = models.ForeignKey(PracticeCategories, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id)+ " - Learn Category Item - "+self.itemName

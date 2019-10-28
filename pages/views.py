@@ -1,14 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import *
+from article.models import *
 
 # Create your views here.
 def home_veiw(request):
     return render(request, 'home.html',{})
 
 def learn_veiw(request):
-    categories = Learn_Categories.objects.all()
-    categoryItems = Learn_Category_Item.objects.all()
+    categories = LearnCategories.objects.all()
+    categoryItems = LearnCategoryItem.objects.all()
     categoryGroups = groupItems(categoryItems)
     
 
@@ -16,8 +16,8 @@ def learn_veiw(request):
     return render(request, 'learn.html',context)
 
 def practice_veiw(request):
-    categories = Practice_Categories.objects.all()
-    categoryItems = Practice_Category_Item.objects.all()
+    categories = PracticeCategories.objects.all()
+    categoryItems = PracticeCategoryItem.objects.all()
     categoryGroups = groupItems2(categoryItems)
 
     context = { 'categories':categories, 'categoryItems':categoryItems, "categoryGroups":categoryGroups }
@@ -38,7 +38,7 @@ def groupItems(categoryItems):
         
         if(idx % 3 == 0 and i != 0):
             print("iter: "+str(idx) + " group len: "+ str(len(group)) ) 
-            printList(group)
+            #printList(group)
             categoryGroups.append(group)
             group = []
         if(i != 0 and categoryItems[i-1].category.type != categoryItems[i].category.type):
