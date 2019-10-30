@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 class Choices():
 
-    LEARN_ARTICLE = "LEARN_A"
-    PRACTICE_ARTICLE = "PRACTICE_A"
-    OTHER_ARTICLE = "OTHER_A"
+    LEARN_ARTICLE = "LEARN_ARTI"
+    PRACTICE_ARTICLE = "PRACTICE_ARTI"
+    OTHER_ARTICLE = "OTHER_ARTI"
   
     ARTICLE_CHOICES = [#(UNDEFINED,"--NO CATEGORY--"),
                         (LEARN_ARTICLE, "Learn Article"), 
@@ -27,7 +27,19 @@ class Choices():
                         (ADV_DATA_STRUCTURES, "Advanced Data Structures"), 
                         (OTHER, "Other"),
                         (NONE, "NONE"),]
-    
+
+
+def articleImageUpload(instance, filename):
+
+    if(instance.article_type == Choices.LEARN_ARTICLE):
+        return 'images/articles/learn/{0}_{1}/{2}'.format(instance.category,instance.title, filename) 
+    elif(instance.article_type == Choices.PRACTICE_ARTICLE):
+        return 'images/articles/practice//{0}_{1}/{2}'.format(instance.category,instance.title, filename) 
+    else:
+        return 'images/articles/other//{0}_{1}/{2}'.format(instance.category,instance.title, filename) 
+
+
+
 
 class Article(models.Model):
     
@@ -39,12 +51,14 @@ class Article(models.Model):
     article_type = models.CharField(max_length=20, choices=Choices.ARTICLE_CHOICES)
     category = models.CharField(max_length=20, choices=Choices.CATEGORY_CHOICES)
     title = models.CharField(max_length=120);
-    images_path = models.FilePathField(path="static/images/article{0}".format(title), blank=True ,recursive=True, max_length=100)
+    image_upload = models.ImageField(upload_to=articleImageUpload, null=True)
     
     description = models.TextField(blank=True)
 
     def __str__(self):
-        return str(self.id) + " - " + self.title + " ({0} Category: {1})".format(self.article_type,self.category) 
+        return str(self.id) + " - " + self.title + " ({0} Category: {1})".format(self.article_type, self.category)
+
+    
     
 
 class Section(models.Model):    
@@ -63,8 +77,10 @@ class Section(models.Model):
 class SubSection(models.Model):
     title = models.CharField(max_length=120, blank=True);
     subsec_text = models.TextField(blank=True)
-    section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name="subSec", )
+    
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="subSec", )
+    section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name="subSec", )
+    
 
     def __str__(self):
         return str(self.id)+ " - "+self.title +" (In article:{0}[{1}], section: {2}[{3}])".format(self.article.title, self.article.id ,self.section.title,self.section.id)
