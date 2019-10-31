@@ -61,20 +61,20 @@ DEALINGS IN THE SOFTWARE. */
     padding: 10px;
     font-size: 1.1em;
     display: block;
-    border-left: 3px solid #e9ebee;
+    border-left: 3px solid #e8e8e8;
 }
 
 .sidebar ul li .sidebar-link:hover {
     border-left: 3px solid #009688;
     color: #1d2129;
-    background: #fff;
+    background: #e5f4f3;
 }
 
 .sidebar ul li.active>.sidebar-link,
 .sidebar ul li.active>div+a {
     border-left: 3px solid #009688;
     color: #1d2129;
-    background-color: #fff;
+    background-color: #e5f4f3;
 }
 
 .sidebar ul li .active>.sidebar-link {

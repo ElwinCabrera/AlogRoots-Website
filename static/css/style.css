@@ -43,8 +43,8 @@ body {
 .toc a.active,
 .toc-submenu a.active {
     font-weight: 500;
-    padding-left: 14px;
-    border-left: 2px solid #ee6e73;
+    padding-left: 13px;
+    border-left: 3px solid #009688;
 }
 
 .toc-submenu {
