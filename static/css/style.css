@@ -25,6 +25,33 @@ body {
     color: inherit;
 }
 
+.toc {
+    padding-top: 48px;
+    list-style-type: none;
+}
+
+.toc a,
+.toc-submenu a {
+    color: rgba(0, 0, 0, 0.80);
+    font-weight: 400;
+    padding-left: 16px;
+    line-height: 1.5rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.toc a.active,
+.toc-submenu a.active {
+    font-weight: 500;
+    padding-left: 14px;
+    border-left: 2px solid #ee6e73;
+}
+
+.toc-submenu {
+    padding-left: 18px;
+    padding-top: 0px;
+}
+
 
 /* 
 h1 {

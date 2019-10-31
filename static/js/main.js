@@ -12,12 +12,18 @@ $(document).ready(documentReady);
 
 function documentReady(jQuery) {
     console.log("main.js ready!");
+    $(window).scroll(scrollEvent);
+
     $(".sidebar>ul>li div[data-toggle='collapse']").click(onSidebarClickEvent);
     $('.solution-btn').click(solutionsBtnClick);
 
     $('[data-spy="scroll"]').on('activate.bs.scrollspy', function() {
         console.log("here");
     });
+
+
+
+
 
 }
 
@@ -46,4 +52,23 @@ function solutionsBtnClick(event) {
     } else {
         $(this).text("Show Solutions");
     }
+}
+
+function scrollEvent(event) {
+    var scroll = $(window).scrollTop();
+
+
+
+    $('.toc-item a.active').removeClass('active');
+    console.log("scroll is: " + scroll + " runtime is: " + $('#run-time').offset().top);
+
+    $('.article-sec').each(function(_, section) {
+        var secId = section.id;
+
+        if ($(section).offset().top < scroll + 10) {
+            $('.toc-item a.active').removeClass('active');
+            $('.toc-item a[href=\'#' + secId + '\']').addClass('active');
+
+        }
+    });
 }

@@ -27,7 +27,7 @@
                         <h1>{{ article.title }}</h1>
                     </div>
 
-                    <div class="article-sec">
+                    <div class="article-sec" id="reference">
                         <h2>Reference</h2>
                         
 
@@ -101,7 +101,7 @@
                     
 
                     {% for section in sections %}
-                    <div class="mb-0 article-sec">
+                    <div class="mb-0 article-sec" id="{{ section.title|slugify }}">
                         <h2>{{ section.title }}</h2>
 
                         {% if section.sec_text != section.sec_text.empty%}
@@ -113,7 +113,7 @@
                         
                         {% for subsection in sub_sections %}
                         
-                        <h3>{{ subsection.title}}</h3>
+                        <h3 id="{{ subsection.title|slugify }}" >{{ subsection.title}}</h3>
                         <p>{{subsection.subsec_text}}</p>
 
                         {% endfor %}
@@ -124,7 +124,7 @@
                     {% endfor %}
 
                     {% if resources %}
-                    <div class="mb-0 article-sec">
+                    <div class="mb-0 article-sec" id="resources">
                         <h2>Resources and Citations</h2>
 
                         <ul>
@@ -142,15 +142,32 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
-            <ul>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-            </ul>
+            <div class="col-sm-3 d-none d-md-block">
+                
+                <ul class="sticky-top toc">
+                    
+                    <li class="toc-item my-1"><a class="active" href="#reference">Reference</a></li>
+                    {% for section in sections %}
+                    <li class="toc-item my-1"><a class="" href="#{{ section.title|slugify }}">{{ section.title }}</a></li>
+                    
+                        {% if section.has_subsections %}
+                        <li class="my-1">
+                            <ul class= "toc toc-submenu">
+                                {% for subsection in sub_sections %}
+                                <li class="toc-item my-1"><a class="" href="#{{ subsection.title|slugify }}">{{ subsection.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if resources %}
+                        <li class="toc-item my-1"><a class="" href="#resources">Resources</a></li>
+                    {% endif %}
+                    
+                </ul>
+
             </div>
 
 
