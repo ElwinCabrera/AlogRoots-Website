@@ -51,7 +51,7 @@ class Article(models.Model):
     article_type = models.CharField(max_length=20, choices=Choices.ARTICLE_CHOICES)
     category = models.CharField(max_length=20, choices=Choices.CATEGORY_CHOICES)
     title = models.CharField(max_length=120);
-    image_upload = models.ImageField(upload_to=articleImageUpload, null=True)
+    image_upload = models.ImageField(upload_to=articleImageUpload, blank=True)
     
     description = models.TextField(blank=True)
 
