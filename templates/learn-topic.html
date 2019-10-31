@@ -143,30 +143,8 @@
             </div>
 
             <div class="col-sm-3 d-none d-md-block">
-                
-                <ul class="sticky-top toc">
-                    
-                    <li class="toc-item my-1"><a class="active" href="#reference">Reference</a></li>
-                    {% for section in sections %}
-                    <li class="toc-item my-1"><a class="" href="#{{ section.title|slugify }}">{{ section.title }}</a></li>
-                    
-                        {% if section.has_subsections %}
-                        <li class="my-1">
-                            <ul class= "toc toc-submenu">
-                                {% for subsection in sub_sections %}
-                                <li class="toc-item my-1"><a class="" href="#{{ subsection.title|slugify }}">{{ subsection.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
 
-                        {% endif %}
-                    {% endfor %}
-
-                    {% if resources %}
-                        <li class="toc-item my-1"><a class="" href="#resources">Resources</a></li>
-                    {% endif %}
-                    
-                </ul>
+                {% include "toc.html" with reference="True" sections=sections  sub_sections=sub_sections resources=resources%}
 
             </div>
 

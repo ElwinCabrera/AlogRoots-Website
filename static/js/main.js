@@ -60,7 +60,7 @@ function scrollEvent(event) {
 
 
     $('.toc-item a.active').removeClass('active');
-    console.log("scroll is: " + scroll + " runtime is: " + $('#run-time').offset().top);
+    console.log("scroll is: " + scroll);
 
     $('.article-sec').each(function(_, section) {
         var secId = section.id;

@@ -35,7 +35,7 @@
                     
                     <div class="collapse" id="solutions">
                     {% for section in sections %}
-                    <div class="mb-0 article-sec">
+                    <div class="mb-0 article-sec" id="{{ section.title|slugify }}">
                         <h2>{{ section.title }}</h2>
 
                         {% if section.sec_text != section.sec_text.empty%}
@@ -49,7 +49,7 @@
                         
                         {% for subsection in sub_sections %}
                         
-                        <h3>{{ subsection.title}}</h3>
+                        <h3 id="{{ subsection.title|slugify }}">{{ subsection.title}}</h3>
                         <p>{{subsection.subsec_text}}</p>
 
                         {% endfor %}
@@ -61,7 +61,7 @@
                     </div>
 
                     {% if resources %}
-                    <div class="mb-0 article-sec">
+                    <div class="mb-0 article-sec" id="resources">
                         <h2>Resources and Citations</h2>
 
                         <ul>
@@ -79,15 +79,8 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
-            <ul>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-            </ul>
+            <div class="col-sm-3 d-none d-md-block">
+                {% include "toc.html" with sections=sections sub_sections=sub_sections resources=resources%}
             </div>
 
 
