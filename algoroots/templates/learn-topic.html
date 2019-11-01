@@ -105,17 +105,19 @@
                         <h2>{{ section.title }}</h2>
 
                         {% if section.sec_text != section.sec_text.empty%}
-                            <p>{{ section.sec_text}}</p>
+                            <p>{{ section.sec_text|safe}}</p>
                         {% endif %}
 
 
                         {% if section.has_subsections %}
                         
                         {% for subsection in sub_sections %}
+                        {% if subsection.section.id == section.id %}
                         
                         <h3 id="{{ subsection.title|slugify }}" >{{ subsection.title}}</h3>
-                        <p>{{subsection.subsec_text}}</p>
-
+                        <p>{{subsection.subsec_text|safe}}</p>
+                        
+                        {% endif %}
                         {% endfor %}
                         {% endif %}
                     </div>

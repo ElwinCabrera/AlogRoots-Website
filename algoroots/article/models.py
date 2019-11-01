@@ -127,8 +127,8 @@ class Complexity(models.Model):
 
 
 class ResourcesCitations(models.Model):
-    source_name = models.CharField(max_length=120, blank=False)
-    url = models.CharField(max_length=20, blank=False);
+    source_name = models.CharField(max_length=500, blank=False)
+    url = models.CharField(max_length=500, blank=True);
 
     article = models.ForeignKey(Article,  on_delete=models.CASCADE, related_name="resources_citations")
 

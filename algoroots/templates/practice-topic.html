@@ -48,10 +48,11 @@
                         {% if section.has_subsections %}
                         
                         {% for subsection in sub_sections %}
+                        {% if subsection.section.id == section.id %}
                         
                         <h3 id="{{ subsection.title|slugify }}">{{ subsection.title}}</h3>
                         <p>{{subsection.subsec_text}}</p>
-
+                        {% endif %}
                         {% endfor %}
                         {% endif %}
                     </div>

@@ -13,7 +13,11 @@
                         <li class="my-1">
                             <ul class= "toc toc-submenu">
                                 {% for subsection in sub_sections %}
+                                {% if subsection.section.id == section.id %}
+                                
                                 <li class="toc-item my-1"><a class="" href="#{{ subsection.title|slugify }}">{{ subsection.title }}</a></li>
+                                
+                                {% endif %}
                                 {% endfor %}
                             </ul>
                         </li>
