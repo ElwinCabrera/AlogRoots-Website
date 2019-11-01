@@ -7,20 +7,18 @@ def home_veiw(request):
     return render(request, 'home.html',{})
 
 def learn_veiw(request):
-    categories = LearnCategories.objects.all()
-    categoryItems = LearnCategoryItem.objects.all()
-    categoryGroups = groupItems(categoryItems)
+    articles = Article.objects.filter(article_type=Choices.LEARN_ARTICLE)
+    articleGroups = groupItemsLearnView(articles)
     
 
-    context = { 'categories':categories, 'categoryItems':categoryItems, "categoryGroups":categoryGroups}
+    context = { 'articles':articles, "articleGroups":articleGroups, "categories":Choices.CATEGORY_CHOICES}
     return render(request, 'learn.html',context)
 
 def practice_veiw(request):
-    categories = PracticeCategories.objects.all()
-    categoryItems = PracticeCategoryItem.objects.all()
-    categoryGroups = groupItems2(categoryItems)
+    articles = Article.objects.filter(article_type=Choices.PRACTICE_ARTICLE)
+    # articleGroups = groupItemsPracticeView(articles)
 
-    context = { 'categories':categories, 'categoryItems':categoryItems, "categoryGroups":categoryGroups }
+    context = { 'articles':articles, "categories":Choices.CATEGORY_CHOICES}
     return render(request, 'practice.html',context)
 
 def about_view(request):
@@ -30,44 +28,44 @@ def about_view(request):
 
 
 # HELPER FUNCTIONS
-def groupItems(categoryItems):
-    categoryGroups = []
+def groupItemsLearnView(articles):
+    articleGroups = []
     group = []
     idx = 0
-    for i in range(len(categoryItems)):
+    for i in range(len(articles)):
         
         if(idx % 3 == 0 and i != 0):
             print("iter: "+str(idx) + " group len: "+ str(len(group)) ) 
             #printList(group)
-            categoryGroups.append(group)
+            articleGroups.append(group)
             group = []
-        if(i != 0 and categoryItems[i-1].category.type != categoryItems[i].category.type):
+        if(i != 0 and articles[i-1].category != articles[i].category):
             idx +=  3 - len(group)
             if(len(group) != 0):
-                categoryGroups.append(group)
+                articleGroups.append(group)
             group = []
-        group.append(categoryItems[i])
+        group.append(articles[i])
         idx+=1    
         
     if(len(group) != 0):
-        categoryGroups.append(group)
+        articleGroups.append(group)
     
-    return categoryGroups
+    return articleGroups
 
-def groupItems2(categoryItems):
+def groupItemsPracticeView(articles):
     m = {}
-    group = []
-    for item in categoryItems:
-        key = item.category.type;
+    articleGroups = []
+    for article in articles:
+        key = article.category;
         if(key in m):
-            m[key].append(item);
+            m[key].append(article);
         else:
-            m[key] = [item];
+            m[key] = [article];
     
     for key in m:
-        group.append(m[key]);
+        articleGroups.append(m[key]);
     
-    return group;
+    return articleGroups;
 
 
     

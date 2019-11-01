@@ -14,7 +14,7 @@
         <div class="row">
 
             <div class="col-md-3 ">
-                {% include "left-sidenav.html" with sideNavTitle="Learn Category" sticky_top="sticky-top" categories=categories categoryItem=categoryItem %}
+                {% include "left-sidenav.html" with sideNavTitle="Learn Category" sticky_top="sticky-top" categories=categories articles=articles  %}
             </div>
 
 
@@ -26,17 +26,17 @@
                 {% for category in categories %}
                 
                 <!-- Start Section -->
-                <section class="{{category.name|slugify}}-section">
+                <section class="{{category.0|slugify}}-section">
 
 
                     <!-- Start Section Text-->
-                    <div class="container mb-1" id="{{category.name|slugify}}-sec">
-                        <h3 class="font-weight-bold" >{{ category.name }}</h3>
+                    <div class="container mb-1" id="{{category.1|slugify}}-sec">
+                        <h3 class="font-weight-bold" >{{ category.1 }}</h3>
                     </div>
                     <hr class="clearfix">
                     <!-- End Section Text-->
 
-                    {% for categoryGroup in  categoryGroups%}
+                    {% for articleGroup in  articleGroups %}
                     
                     
                     <!-- Start Row of 3 Cards -->
@@ -44,17 +44,17 @@
 
                         
                         
-                        {% for group in categoryGroup %}
+                        {% for article in articleGroup %}
                         
-                        {% if group.category.name == category.name%}
+                        {% if article.category == category.0%}
 
                         <!-- Start Card Col-->
                         <div class="col-md-4 mb-3 mb-md-0" >
                             <div class="card" >
-                                <a class="stretched-link" href="{% url 'learn_article_view' article_id=group.article.id %}"></a>
-                                <img src="{% static "media/" %}{{ group.article.image_upload.url }}" class="card-img-top d-none d-md-block" alt="Test alt">
+                                <a class="stretched-link" href="{% url 'learn_article_view' article_id=article.id %}"></a>
+                                <img src="{% static "media/" %}{{ article.image_upload.url }}" class="card-img-top d-none d-md-block" alt="Test alt">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">{{ group.itemName }}</h5>
+                                    <h5 class="card-title">{{ article.title }}</h5>
                                     <!-- <p class="card-text">Extra Text</p> -->
                                 </div>
                             </div>

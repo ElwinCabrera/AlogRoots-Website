@@ -132,7 +132,13 @@
                         <ul>
                             {% for resource in resources %}
                             <li>
-                                <p><a href="{{ resource.url }}">{{ resource.source_name }}</a></p>
+                                <p>
+                                {% if resource.url %}
+                                    <a href="{{ resource.url }}">{{ resource.source_name }}</a>
+                                {% else %}
+                                    {{ resource.source_name }}
+                                {% endif %}
+                                </p>
                             </li>
                             {% endfor %}
                         </ul>

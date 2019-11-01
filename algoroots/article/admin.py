@@ -12,9 +12,4 @@ admin.site.register(SubSection)
 admin.site.register(ResourcesCitations)
 
 
-admin.site.register(LearnCategories)
-admin.site.register(PracticeCategories)
-admin.site.register(LearnCategoryItem)
-admin.site.register(PracticeCategoryItem)
-
 
